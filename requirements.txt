@@ -1,0 +1,16 @@
+dash==1.0.0
+dash-daq==0.1.0
+clickhouse-driver==0.0.15
+pandas==0.24.2
+gunicorn==19.7.1
+pandas-compat==0.1.1
+lz4==2.1.1
+clickhouse-cityhash==1.0.2.2
+dash-flexbox-grid==0.2.1
+Flask-Caching==1.0.0
+ballpark==1.4.0
+dash-table==4.0.0
+sanpy==0.6.1
+elasticsearch==6.3.1
+python-dotenv==0.10.3
+scikit-learn==0.21.3

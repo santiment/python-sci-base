@@ -11,7 +11,8 @@ podTemplate(label: 'python-sci-base', containers: [
 
         if (env.BRANCH_NAME == "master") {
           withDockerRegistry([ credentialsId: "dockerHubCreds", url: "" ]) {
-            sh "docker push santiment/python-sci-base:${env.BRANCH_NAME}"
+            sh "docker build -t santiment/python-sci-base:latest ."
+            sh "docker push santiment/python-sci-base:latest"
           }
         }
       }

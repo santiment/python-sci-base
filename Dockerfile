@@ -2,9 +2,9 @@ FROM python:3.6-alpine as builder
 
 WORKDIR /app
 
-RUN apk add --no-cache gcc g++ make gfortran \
+RUN apk add --no-cache build-base gfortran \
   libffi libffi-dev openssl openssl-dev libxml2-dev libxml2 \
-  libxslt libxslt-dev lapack-dev
+  libxslt libxslt-dev lapack-dev freetype-dev
 
 RUN pip wheel cython numpy -w /wheels
 RUN pip install cython numpy --find-links /wheels
@@ -13,9 +13,6 @@ COPY requirements.txt /app/requirements.txt
 RUN pip wheel -v -r requirements.txt -w /wheels
 
 RUN pip install -r requirements.txt --find-links /wheels
-
-RUN pip wheel matplotlib -w /wheels
-RUN pip install matplotlib --find-links /wheels
 
 FROM python:3.6-alpine
 

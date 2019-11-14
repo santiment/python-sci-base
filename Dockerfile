@@ -14,6 +14,9 @@ RUN pip wheel -v -r requirements.txt -w /wheels
 
 RUN pip install -r requirements.txt --find-links /wheels
 
+RUN pip wheel matplotlib -w /wheels
+RUN pip install matplotlib --find-links /wheels
+
 FROM python:3.6-alpine
 
 WORKDIR /app
